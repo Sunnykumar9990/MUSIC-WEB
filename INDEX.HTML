@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Purane Nagme</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="page" id="page">
+
+    <div class="overlay"></div>
+
+    <header>
+        <div class="small-title">A JOURNEY THROUGH</div>
+        <h1>पुराने नगमे</h1>
+        <p>पुरानी यादों के साथ...</p>
+    </header>
+
+
+    <main class="radio">
+
+        <!-- RADIO TOP -->
+        <div class="radio-top">
+            <div class="brand">RADIO</div>
+
+            <div class="light"></div>
+
+            <div class="model">
+                PURANE NAGME
+            </div>
+        </div>
+
+
+        <!-- RADIO DISPLAY -->
+        <div class="display">
+
+            <div class="frequency">
+                <span>FM</span>
+                <strong>98.5</strong>
+                <span>MHz</span>
+            </div>
+
+            <div id="status">
+                READY TO PLAY
+            </div>
+
+        </div>
+
+
+        <!-- CURRENT SONG -->
+        <div class="song-info">
+
+            <img
+                id="songImage"
+                src="images/song1.jpg"
+                alt="Song"
+            >
+
+            <div>
+                <span class="now-playing">
+                    NOW PLAYING
+                </span>
+
+                <h2 id="songTitle">
+                    O Mere Dil Ke Chain
+                </h2>
+
+                <p id="artist">
+                    Kishore Kumar
+                </p>
+            </div>
+
+        </div>
+
+
+        <!-- CASSETTE -->
+        <div class="cassette">
+
+            <div class="cassette-label">
+                <span>STEREO</span>
+                <b>पुराने नगमे</b>
+                <span>90</span>
+            </div>
+
+            <div class="tape-window">
+
+                <div class="reel" id="reel1"></div>
+
+                <div class="tape"></div>
+
+                <div class="reel" id="reel2"></div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PROGRESS -->
+        <div class="progress-box">
+
+            <span id="currentTime">0:00</span>
+
+            <input
+                type="range"
+                id="progress"
+                min="0"
+                max="100"
+                value="0"
+            >
+
+            <span id="duration">0:00</span>
+
+        </div>
+
+
+        <!-- CONTROLS -->
+        <div class="controls">
+
+            <button id="prevBtn">
+                ⏮
+            </button>
+
+            <button id="playBtn" class="play">
+                ▶
+            </button>
+
+            <button id="nextBtn">
+                ⏭
+            </button>
+
+        </div>
+
+
+        <!-- VOLUME -->
+        <div class="volume">
+
+            🔊
+
+            <input
+                type="range"
+                id="volume"
+                min="0"
+                max="1"
+                step="0.01"
+                value="0.8"
+            >
+
+        </div>
+
+
+        <!-- PLAYLIST -->
+        <section class="playlist-section">
+
+            <div class="playlist-title">
+
+                <h3>🎵 Playlist</h3>
+
+                <span id="songCount">
+                    5 Songs
+                </span>
+
+            </div>
+
+            <div id="playlist"></div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        Made with ❤️ for old melodies
+    </footer>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

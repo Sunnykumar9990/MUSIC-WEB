@@ -1,0 +1,780 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background: #140b06;
+    color: white;
+}
+
+
+/* ===============================
+   BACKGROUND
+================================ */
+
+.page {
+    min-height: 100vh;
+
+    position: relative;
+
+    background-image:
+        url(images/background1.jpg);
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    padding: 40px 15px 60px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    transition: background-image 0.8s ease;
+}
+
+
+.overlay {
+    position: fixed;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            rgba(20, 10, 5, .25),
+            rgba(10, 5, 2, .8)
+        );
+
+    z-index: 0;
+
+    pointer-events: none;
+}
+
+
+/* ===============================
+   HEADER
+================================ */
+
+header {
+    position: relative;
+    z-index: 2;
+
+    text-align: center;
+
+    margin-bottom: 25px;
+}
+
+.small-title {
+    font-family: Arial, sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: 5px;
+
+    color: #e3c087;
+
+    margin-bottom: 10px;
+}
+
+header h1 {
+    font-size: clamp(55px, 10vw, 115px);
+
+    line-height: .85;
+
+    color: #fff0d0;
+
+    text-shadow:
+        4px 4px 0 #91482d,
+        8px 8px 20px black;
+}
+
+header p {
+    margin-top: 15px;
+
+    color: #e0c08c;
+
+    letter-spacing: 2px;
+
+    font-size: 13px;
+}
+
+
+/* ===============================
+   RADIO
+================================ */
+
+.radio {
+    position: relative;
+    z-index: 2;
+
+    width: min(550px, 96vw);
+
+    padding: 22px;
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #795438,
+            #3b2417 60%,
+            #20110a
+        );
+
+    border: 4px solid #9d744b;
+
+    box-shadow:
+        0 30px 70px rgba(0,0,0,.8),
+        inset 0 0 25px rgba(0,0,0,.5);
+}
+
+
+/* ===============================
+   RADIO TOP
+================================ */
+
+.radio-top {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding-bottom: 15px;
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.15);
+}
+
+.brand {
+    color: #e5c087;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+    letter-spacing: 4px;
+}
+
+.model {
+    color: #b99465;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+}
+
+.light {
+    width: 10px;
+    height: 10px;
+
+    border-radius: 50%;
+
+    background: #dc3928;
+
+    box-shadow:
+        0 0 12px #dc3928;
+
+    animation: blink 2s infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: .3;
+    }
+}
+
+
+/* ===============================
+   DISPLAY
+================================ */
+
+.display {
+    margin-top: 18px;
+
+    padding: 13px;
+
+    background: #17130d;
+
+    border: 3px solid #715535;
+
+    border-radius: 8px;
+
+    text-align: center;
+
+    box-shadow:
+        inset 0 0 15px black;
+}
+
+.frequency {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    color: #d9ae63;
+}
+
+.frequency strong {
+    font-family: "Courier New", monospace;
+
+    font-size: 28px;
+
+    letter-spacing: 5px;
+
+    text-shadow:
+        0 0 10px #d28d2d;
+}
+
+.frequency span {
+    font-family: Arial, sans-serif;
+
+    font-size: 9px;
+}
+
+#status {
+    margin-top: 5px;
+
+    color: #8d764e;
+
+    font-family: "Courier New", monospace;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+}
+
+
+/* ===============================
+   SONG
+================================ */
+
+.song-info {
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    margin-top: 25px;
+}
+
+.song-info img {
+    width: 120px;
+    height: 120px;
+
+    flex-shrink: 0;
+
+    object-fit: cover;
+
+    border-radius: 8px;
+
+    border: 4px solid #c69c63;
+
+    box-shadow:
+        0 12px 25px rgba(0,0,0,.6);
+
+    transition:
+        transform .35s,
+        opacity .35s;
+}
+
+.song-info img.change {
+    transform:
+        scale(.75)
+        rotate(-8deg);
+
+    opacity: 0;
+}
+
+.now-playing {
+    color: #c49a63;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+}
+
+.song-info h2 {
+    margin-top: 7px;
+
+    color: #fff0d2;
+
+    font-size: 22px;
+
+    line-height: 1.2;
+}
+
+.song-info p {
+    margin-top: 8px;
+
+    color: #c7a575;
+
+    font-size: 14px;
+}
+
+
+/* ===============================
+   CASSETTE
+================================ */
+
+.cassette {
+    margin-top: 25px;
+
+    padding: 15px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #d3af70,
+            #9d7743
+        );
+
+    border: 3px solid #70512c;
+
+    border-radius: 15px;
+
+    box-shadow:
+        inset 0 0 20px rgba(0,0,0,.4),
+        0 12px 25px rgba(0,0,0,.5);
+}
+
+.cassette-label {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    color: #49351f;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+}
+
+.tape-window {
+    height: 105px;
+
+    margin-top: 12px;
+
+    background: #17130f;
+
+    border-radius: 9px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-around;
+
+    overflow: hidden;
+
+    box-shadow:
+        inset 0 0 18px black;
+}
+
+
+/* ===============================
+   REELS
+================================ */
+
+.reel {
+    width: 68px;
+    height: 68px;
+
+    border-radius: 50%;
+
+    border: 7px solid #777;
+
+    background:
+        radial-gradient(
+            circle,
+            #ddd 0 8%,
+            #555 9% 17%,
+            #aaa 18% 27%,
+            #444 28% 100%
+        );
+
+    position: relative;
+}
+
+.reel::before {
+    content: "";
+
+    position: absolute;
+
+    width: 8px;
+    height: 28px;
+
+    background: #eee;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(-50%, -100%);
+
+    box-shadow:
+        0 0 0 10px transparent,
+        20px 15px 0 #eee,
+        -20px 15px 0 #eee;
+}
+
+.reel::after {
+    content: "";
+
+    position: absolute;
+
+    width: 17px;
+    height: 17px;
+
+    border-radius: 50%;
+
+    background: #ddd;
+
+    border: 4px solid #555;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%);
+}
+
+.reel.spinning {
+    animation:
+        spin .7s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.tape {
+    width: 80px;
+    height: 8px;
+
+    border-radius: 5px;
+
+    background:
+        linear-gradient(
+            #111,
+            #555,
+            #111
+        );
+}
+
+
+/* ===============================
+   PROGRESS
+================================ */
+
+.progress-box {
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    margin-top: 22px;
+
+    color: #d3b17b;
+
+    font-family: "Courier New", monospace;
+
+    font-size: 11px;
+}
+
+#progress {
+    flex: 1;
+
+    accent-color: #d2a35f;
+
+    cursor: pointer;
+}
+
+
+/* ===============================
+   CONTROLS
+================================ */
+
+.controls {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 22px;
+
+    margin-top: 20px;
+}
+
+.controls button {
+    border: none;
+
+    border-radius: 50%;
+
+    background: #d9bd8c;
+
+    color: #392719;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 6px 12px rgba(0,0,0,.5);
+
+    transition: .2s;
+}
+
+.controls button:hover {
+    transform: scale(1.1);
+
+    background: #f0d7a5;
+}
+
+.controls button:not(.play) {
+    width: 45px;
+    height: 45px;
+
+    font-size: 18px;
+}
+
+.controls .play {
+    width: 65px;
+    height: 65px;
+
+    font-size: 24px;
+}
+
+
+/* ===============================
+   VOLUME
+================================ */
+
+.volume {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 15px;
+}
+
+#volume {
+    width: 120px;
+
+    accent-color: #d0a05d;
+}
+
+
+/* ===============================
+   PLAYLIST
+================================ */
+
+.playlist-section {
+    margin-top: 25px;
+
+    padding-top: 18px;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.15);
+}
+
+.playlist-title {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 10px;
+}
+
+.playlist-title h3 {
+    color: #efd5a5;
+
+    font-size: 17px;
+}
+
+.playlist-title span {
+    color: #a88b63;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 10px;
+}
+
+#playlist {
+    max-height: 260px;
+
+    overflow-y: auto;
+}
+
+.playlist-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 9px;
+
+    margin-bottom: 6px;
+
+    border-radius: 8px;
+
+    background:
+        rgba(255,255,255,.06);
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+.playlist-item:hover {
+    background:
+        rgba(255,255,255,.13);
+
+    transform:
+        translateX(3px);
+}
+
+.playlist-item.active {
+    background:
+        rgba(200,153,82,.35);
+
+    border-left:
+        3px solid #e3bc78;
+}
+
+.playlist-number {
+    width: 25px;
+
+    color: #c6a06c;
+
+    font-size: 11px;
+}
+
+.playlist-cover {
+    width: 42px;
+    height: 42px;
+
+    object-fit: cover;
+
+    border-radius: 5px;
+}
+
+.playlist-info {
+    flex: 1;
+
+    min-width: 0;
+}
+
+.playlist-info strong {
+    display: block;
+
+    color: #f0e0c5;
+
+    font-size: 13px;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+.playlist-info span {
+    color: #a98a64;
+
+    font-size: 10px;
+}
+
+.play-icon {
+    color: #d5aa6a;
+}
+
+
+/* ===============================
+   FOOTER
+================================ */
+
+footer {
+    position: relative;
+
+    z-index: 2;
+
+    margin-top: 20px;
+
+    color: #c9a97a;
+
+    font-size: 11px;
+}
+
+
+/* ===============================
+   MOBILE
+================================ */
+
+@media(max-width:600px) {
+
+    .page {
+        padding:
+            25px 10px 40px;
+
+        background-attachment:
+            scroll;
+    }
+
+    header h1 {
+        font-size: 65px;
+    }
+
+    .radio {
+        padding: 15px;
+    }
+
+    .song-info img {
+        width: 90px;
+        height: 90px;
+    }
+
+    .song-info h2 {
+        font-size: 17px;
+    }
+
+    .reel {
+        width: 55px;
+        height: 55px;
+    }
+
+    .tape {
+        width: 50px;
+    }
+}
